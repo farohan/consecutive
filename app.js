@@ -1,3 +1,5 @@
+//Consecutive Numbers Sum Formula
+
 const answer = document.querySelector('#answer');
 
 function sumOfConsecutiveNumbers() {
@@ -12,9 +14,23 @@ function sumOfConsecutiveNumbers() {
     answer.innerHTML = `Sum of ${firstNumber} to ${lastNumber}: <br><br> ${sum}`;
 }
 
-function formHandler(event) {
-    event.preventDefault();
+//Consecutive Squares Sum Formula
+
+const answer2 = document.querySelector('#answer2');
+
+function summation(n) {
+    return (n * (n + 1) / 2) * (2 * n + 1) / 3;
 }
 
-const form = document.querySelector('#form');
-form.addEventListener('submit', formHandler);
+function altogether() {
+    let target = Number(document.querySelector('#target').value);
+    answer2.innerHTML = summation(target);
+}
+
+//Handling the form refresh event
+
+document.querySelectorAll('.form').forEach(item => {
+    item.addEventListener('submit', event => {
+        event.preventDefault();
+    })
+})
